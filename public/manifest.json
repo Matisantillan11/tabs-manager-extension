@@ -12,6 +12,7 @@
     "default_popup": "index.html",
     "default_icon": "vite.svg"
   },
+  "host_permissions": ["https://developer.chrome.com/*"],
   "permissions": [
     "tabs",
     "activeTab"

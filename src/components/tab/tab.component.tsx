@@ -3,10 +3,14 @@ import { ITab } from '../../interfaces/tab/tab.interface';
 import { STabContainer } from './styles/tabs.style'
 import { useState } from 'react'
 
-export const Tab = ({ title }: ITab) => {
+export const Tab = ({ title, id }: ITab) => {
   const [ active, setActive ] = useState<boolean>(false);
+  
+  const navigate = () => {
+    chrome.tabs.update(id, { active: true });
+  }
   return (
-    <STabContainer>
+    <STabContainer onClick={navigate}>
       <div>
         <p>{title}</p>
       </div>
